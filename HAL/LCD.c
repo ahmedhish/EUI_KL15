@@ -16,7 +16,7 @@ void LCD_Init(void)
 {
     
     DIO_SetPinDir(LCD_4BIT_CMD_PORT ,LCD_RS_PIN ,DIO_PIN_OUTPUT);
-    //DIO_SetPinDir(LCD_4BIT_CMD_PORT ,LCD_RW_PIN ,DIO_PIN_OUTPUT);
+    /*DIO_SetPinDir(LCD_4BIT_CMD_PORT ,LCD_RW_PIN ,DIO_PIN_OUTPUT);*/
     DIO_SetPinDir(LCD_4BIT_CMD_PORT ,LCD_EN_PIN ,DIO_PIN_OUTPUT);
     
     DIO_SetPinDir(LCD_4BIT_DATA_PORT ,LCD_D4 ,DIO_PIN_OUTPUT);
@@ -82,7 +82,7 @@ void LCD_WriteCommand(uint8_t cmd)
     _delay_ms(1);
     DIO_SetPinVal(LCD_4BIT_CMD_PORT ,LCD_EN_PIN ,DIO_PIN_LOW);
     
-    _delay_ms(5); // LCD store delay
+    _delay_ms(5); /*LCD store delay*/
 }
 
 void LCD_WriteChar(uint8_t chr)
@@ -120,34 +120,74 @@ void LCD_WriteChar(uint8_t chr)
     /*
     Falling Edge to process the data
     */
-    DIO_SetPinVal(LCD_4BIT_CMD_PORT ,LCD_EN_PIN ,DIO_PIN_HIGH);     //Enable=1
+    DIO_SetPinVal(LCD_4BIT_CMD_PORT ,LCD_EN_PIN ,DIO_PIN_HIGH);     /*Enable=1*/
     _delay_ms(1);
     DIO_SetPinVal(LCD_4BIT_CMD_PORT ,LCD_EN_PIN ,DIO_PIN_LOW);
     
-    _delay_ms(5); // LCD store delay
+    _delay_ms(5); /* LCD store delay*/
 }
 
-void LCD_WriteString(char* str)
+LCD_errors_status LCD_WriteString(char* str)
 {
+	
     uint8_t i = 0;
     
     while(str[i] != '\0')
     {
         LCD_WriteChar(str[i]);
         i++;
+		if(i>LCD_WIDTH)
+			return LCD_MAX_SIZE_REACHED_ERROR;
     }
+	return LCD_no_error;
 }
 
 
-void LCD_Goto(uint8_t row, uint8_t col)
+LCD_errors_status LCD_Goto(uint8_t row, uint8_t col)
 {
-uint8_t pos[2] = {0x80 , 0xC0};
-
-LCD_WriteCommand(pos[row]+col);
+	
+	if(row>MAX_NUMBER_OF_ROWS)
+		return LCD_MAX_ROW_SIZE_EXCEEDED;
+		
+	else if (col>LCD_WIDTH)
+		return LCD_MAX_COLUMN_SIZE_EXCEEDED;
+	
+	uint8_t pos[] = { 0x80, 0xC0, 0xA0, 0xE0};
+	
+	LCD_WriteCommand(pos[row]+col);
+	
+	return LCD_no_error;
 
 }
 
 void LCD_Clear(void)
 {
     LCD_WriteCommand(0x01);
+}
+
+void LCD_WriteNumber( uint32_t num)
+{
+	uint8_t str[10],i=0,j;
+	if (num==0)
+	{
+		LCD_WriteChar('0');
+		return;
+	}
+	if (num<0)
+	{
+		num=num*(-1);
+		LCD_WriteChar('-');
+	}
+	
+	while(num)
+	{
+		str[i]=num%10 +'0';
+		i++;
+		num=num/10;
+	}
+	for (j=i;j>0;j--)
+	{
+		LCD_WriteChar(str[j-1]);
+	}
+
 }

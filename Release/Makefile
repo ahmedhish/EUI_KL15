@@ -41,14 +41,17 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../APP/klima.c \
 ../APP/Traffic_light.c \
 ../HAL/Button.c \
 ../HAL/Keypad.c \
 ../HAL/LCD.c \
 ../HAL/LED.c \
 ../main.c \
+../MCAL/ADC.c \
 ../MCAL/DIO.c \
-../MCAL/Ext_INT.c
+../MCAL/Ext_INT.c \
+../MCAL/TIMER.c
 
 
 PREPROCESSING_SRCS += 
@@ -58,44 +61,56 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+APP/klima.o \
 APP/Traffic_light.o \
 HAL/Button.o \
 HAL/Keypad.o \
 HAL/LCD.o \
 HAL/LED.o \
 main.o \
+MCAL/ADC.o \
 MCAL/DIO.o \
-MCAL/Ext_INT.o
+MCAL/Ext_INT.o \
+MCAL/TIMER.o
 
 OBJS_AS_ARGS +=  \
+APP/klima.o \
 APP/Traffic_light.o \
 HAL/Button.o \
 HAL/Keypad.o \
 HAL/LCD.o \
 HAL/LED.o \
 main.o \
+MCAL/ADC.o \
 MCAL/DIO.o \
-MCAL/Ext_INT.o
+MCAL/Ext_INT.o \
+MCAL/TIMER.o
 
 C_DEPS +=  \
+APP/klima.d \
 APP/Traffic_light.d \
 HAL/Button.d \
 HAL/Keypad.d \
 HAL/LCD.d \
 HAL/LED.d \
 main.d \
+MCAL/ADC.d \
 MCAL/DIO.d \
-MCAL/Ext_INT.d
+MCAL/Ext_INT.d \
+MCAL/TIMER.d
 
 C_DEPS_AS_ARGS +=  \
+APP/klima.d \
 APP/Traffic_light.d \
 HAL/Button.d \
 HAL/Keypad.d \
 HAL/LCD.d \
 HAL/LED.d \
 main.d \
+MCAL/ADC.d \
 MCAL/DIO.d \
-MCAL/Ext_INT.d
+MCAL/Ext_INT.d \
+MCAL/TIMER.d
 
 OUTPUT_FILE_PATH +=Traffic_Light_Project.elf
 
@@ -111,6 +126,13 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+APP/klima.o: ../APP/klima.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../APP" -I"../.." -I"../CFG" -I"../HAL" -I"../MCAL" -I".."  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 APP/Traffic_light.o: ../APP/Traffic_light.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -153,6 +175,13 @@ HAL/LED.o: ../HAL/LED.c
 	@echo Finished building: $<
 	
 
+MCAL/ADC.o: ../MCAL/ADC.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../APP" -I"../.." -I"../CFG" -I"../HAL" -I"../MCAL" -I".."  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 MCAL/DIO.o: ../MCAL/DIO.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -161,6 +190,13 @@ MCAL/DIO.o: ../MCAL/DIO.c
 	
 
 MCAL/Ext_INT.o: ../MCAL/Ext_INT.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../APP" -I"../.." -I"../CFG" -I"../HAL" -I"../MCAL" -I".."  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/TIMER.o: ../MCAL/TIMER.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../APP" -I"../.." -I"../CFG" -I"../HAL" -I"../MCAL" -I".."  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

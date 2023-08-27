@@ -14,8 +14,8 @@ APP/Traffic_light.d APP/Traffic_light.o: ../APP/Traffic_light.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- ../HAL/LED.h ../CFG/LED_Cfg.h ../HAL/Button.h ../APP/Traffic_Light.h \
- ../APP/Traffic_Light.h \
+ ../HAL/LED.h ../CFG/LED_Cfg.h ../MCAL/Timer.h ../MCAL/DIO.h \
+ ../HAL/Button.h ../APP/Traffic_Light.h ../APP/Traffic_Light.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h
@@ -63,6 +63,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../HAL/LED.h:
 
 ../CFG/LED_Cfg.h:
+
+../MCAL/Timer.h:
+
+../MCAL/DIO.h:
 
 ../HAL/Button.h:
 

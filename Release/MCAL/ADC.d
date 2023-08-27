@@ -1,6 +1,4 @@
-MCAL/Ext_INT.d MCAL/Ext_INT.o: ../MCAL/Ext_INT.c ../MCAL/Bit_math.h \
- ../MCAL/ATMega32A_Registers.h ../STD_types.h ../MCAL/Ext_INT.h \
- ../CFG/Ext_INT_Cfg.h \
+MCAL/ADC.d MCAL/ADC.o: ../MCAL/ADC.c ../MCAL/ADC.h ../STD_types.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
@@ -13,18 +11,11 @@ MCAL/Ext_INT.d MCAL/Ext_INT.o: ../MCAL/Ext_INT.c ../MCAL/Bit_math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- ../HAL/Button.h ../APP/Traffic_Light.h ../HAL/LED.h ../CFG/LED_Cfg.h \
- ../MCAL/Timer.h ../MCAL/DIO.h
+ ../MCAL/ATMega32A_Registers.h ../MCAL/Bit_math.h
 
-../MCAL/Bit_math.h:
-
-../MCAL/ATMega32A_Registers.h:
+../MCAL/ADC.h:
 
 ../STD_types.h:
-
-../MCAL/Ext_INT.h:
-
-../CFG/Ext_INT_Cfg.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
@@ -50,14 +41,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-../HAL/Button.h:
+../MCAL/ATMega32A_Registers.h:
 
-../APP/Traffic_Light.h:
-
-../HAL/LED.h:
-
-../CFG/LED_Cfg.h:
-
-../MCAL/Timer.h:
-
-../MCAL/DIO.h:
+../MCAL/Bit_math.h:

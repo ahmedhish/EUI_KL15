@@ -1,6 +1,6 @@
-MCAL/Ext_INT.d MCAL/Ext_INT.o: ../MCAL/Ext_INT.c ../MCAL/Bit_math.h \
- ../MCAL/ATMega32A_Registers.h ../STD_types.h ../MCAL/Ext_INT.h \
- ../CFG/Ext_INT_Cfg.h \
+APP/klima.d APP/klima.o: ../APP/klima.c ../APP/klima.h ../HAL/LED.h \
+ ../CFG/LED_Cfg.h ../STD_types.h ../MCAL/Timer.h ../MCAL/DIO.h \
+ ../MCAL/ATMega32A_Registers.h ../MCAL/Bit_math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
@@ -13,18 +13,28 @@ MCAL/Ext_INT.d MCAL/Ext_INT.o: ../MCAL/Ext_INT.c ../MCAL/Bit_math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- ../HAL/Button.h ../APP/Traffic_Light.h ../HAL/LED.h ../CFG/LED_Cfg.h \
- ../MCAL/Timer.h ../MCAL/DIO.h
+ ../HAL/LCD.h ../CFG/LCD_Cfg.h ../MCAL/DIO.h ../MCAL/ADC.h \
+ ../MCAL/Ext_INT.h ../CFG/Ext_INT_Cfg.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\delay.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h
 
-../MCAL/Bit_math.h:
+../APP/klima.h:
 
-../MCAL/ATMega32A_Registers.h:
+../HAL/LED.h:
+
+../CFG/LED_Cfg.h:
 
 ../STD_types.h:
 
-../MCAL/Ext_INT.h:
+../MCAL/Timer.h:
 
-../CFG/Ext_INT_Cfg.h:
+../MCAL/DIO.h:
+
+../MCAL/ATMega32A_Registers.h:
+
+../MCAL/Bit_math.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
@@ -50,14 +60,22 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-../HAL/Button.h:
+../HAL/LCD.h:
 
-../APP/Traffic_Light.h:
-
-../HAL/LED.h:
-
-../CFG/LED_Cfg.h:
-
-../MCAL/Timer.h:
+../CFG/LCD_Cfg.h:
 
 ../MCAL/DIO.h:
+
+../MCAL/ADC.h:
+
+../MCAL/Ext_INT.h:
+
+../CFG/Ext_INT_Cfg.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\delay.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:

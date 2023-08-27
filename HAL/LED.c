@@ -22,6 +22,28 @@ void LED_Init(void)
         DIO_SetPinDir(LED_YELLOW_PORT,LED_YELLOW_PIN,DIO_PIN_OUTPUT);  
     
 }
+void LED_deinit(uint8_t led_color)
+{
+	switch (led_color)
+	{
+		case LED_GREEN :
+		DIO_SetPinDir(LED_GREEN_PORT,LED_GREEN_PIN,DIO_PIN_INPUT);
+		break;
+		
+		case LED_RED :
+		DIO_SetPinDir(LED_RED_PORT,LED_RED_PIN,DIO_PIN_INPUT);
+		break;
+		
+		case LED_BLUE :
+		DIO_SetPinDir(LED_BLUE_PORT,LED_BLUE_PIN,DIO_PIN_INPUT);
+		break;
+		
+		case LED_YELLOW :
+		DIO_SetPinDir(LED_YELLOW_PORT,LED_YELLOW_PIN,DIO_PIN_INPUT);
+		break;
+		
+	}
+}
 void LED_TurnOn(uint8_t led_color)
 {
     switch (led_color)
@@ -128,3 +150,4 @@ void LED_Blink_5sec(uint8_t led_color)
         
   
 }
+
